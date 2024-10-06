@@ -20,7 +20,11 @@ int ackermann(int m , int n)
 
 int ackermann_non_recursive(int m, int n, vector<vector<int>>& dp_v, vector<int>& dp_n)
 {
-    if(m == 2)
+    if(m < 2)
+    {
+        return n+1+m;
+    }
+    else if(m == 2)
     {
 
         return n*2 + 3;
@@ -47,18 +51,18 @@ int ackermann_non_recursive(int m, int n, vector<vector<int>>& dp_v, vector<int>
 
 int main()
 {
-    //int m , n;
+    int m , n;
 
-    //cin >> m >> n;
+    cin >> m >> n;
 
     //int dp[m][n];
 
     vector<vector<int>> dp_v;
 
 
-    //cout << ackermann(m,n) << endl;
+    cout << ackermann(m,n) << endl;
 
-    for(int i = 3 ; i <= 3 ; i++)
+    /*for(int i = 3 ; i <= 3 ; i++)
     {
         vector<int> dp_n;
         for(int j = 0 ; j <= 25  ; j++)
@@ -87,6 +91,8 @@ int main()
         }
         cout << endl;
     }
+
+
 
 
     /*for(int i = 0 ; i < 10 ; i++)
